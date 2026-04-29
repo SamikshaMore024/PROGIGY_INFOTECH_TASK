@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Interactive Navbar - New Colors</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    body {
+      height: 2000px;
+      background: #0f172a;
+    }
+
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: transparent;
+      padding: 15px 0;
+      transition: all 0.3s ease;
+      z-index: 1000;
+    }
+
+    nav.scrolled {
+      background: #020617;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
+    }
+
+    ul {  
+      list-style: none;
+      display: flex;
+      justify-content: center;
+    }
+
+    ul li {
+      margin: 0 20px;
+    }
+
+    ul li a {
+      text-decoration: none;
+      color: #e2e8f0;
+      font-size: 18px;
+      transition: all 0.3s ease;
+      padding: 6px 12px;
+    }
+
+    ul li a:hover {
+      color: #ff4ecd;
+      border-bottom: 2px solid #ff4ecd;
+      text-shadow: 0 0 8px rgba(255, 78, 205, 0.7);
+    }
+
+    nav.scrolled ul li a:hover {
+      color: #7c3aed;
+      border-bottom: 2px solid #7c3aed;
+      text-shadow: 0 0 8px rgba(124, 58, 237, 0.7);
+    }
+
+    section {
+      height: 100vh;
+      padding-top: 80px;
+      text-align: center;
+      font-size: 40px;
+      color: white;
+    }
+
+    #home {
+      background: linear-gradient(135deg, #1e293b, #0f172a);
+    }
+
+    #about {
+      background: linear-gradient(135deg, #1d4ed8, #312e81);
+    }
+
+    #services {
+      background: linear-gradient(135deg, #9333ea, #4c1d95);
+    }
+
+    #contact {
+      background: linear-gradient(135deg, #be185d, #7f1d1d);
+    }
+
+  </style>
+</head>
+<body>
+
+  <nav id="navbar">
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <section id="home">Home</section>
+  <section id="about">About</section>
+  <section id="services">Services</section>
+  <section id="contact">Contact</section>
+
+  <script>
+    const navbar = document.getElementById("navbar");
+
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 50) {
+        navbar.classList.add("scrolled");
+      } else {
+        navbar.classList.remove("scrolled");
+      }
+    });
+  </script>
+
+</body>
+</html>
